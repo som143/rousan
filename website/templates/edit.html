@@ -1,0 +1,57 @@
+ <!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: red;
+  padding: 20px;
+}
+</style>
+<body>
+
+<h3>Update details or delete details</h3>
+
+<div>
+  <form action='/update/{{ form.id }}' method = 'post'>
+  {% csrf_token %}
+    <label for="fname">customer_name:</label>
+    <input type="text" id="fname" name="customer_name" placeholder="Your name.." value = {{ form.customer_name }}>
+ 
+
+    <label for="mob">customer_mob</label>
+    <input type="text" id="mob" name="customer_mob" placeholder="Your mob number.." value = {{ form.customer_mob }}>
+    <label for = "time">customer_time</lebel>
+    <input type ="text" id = "time" name= "customer_time" placeholder = "time" value = {{ form.customer_time }}>
+
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
